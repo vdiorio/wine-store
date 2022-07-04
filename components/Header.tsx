@@ -4,11 +4,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import logo from '../public/images/wine.png';
-import search from '../public/images/search.png';
-import user from '../public/images/user.png';
-import cart from '../public/images/wine-cart.png';
-import { CartItem } from '../interfaces/cartItem';
+import logo from '../public/images/logo-wine.svg';
+import search from '../public/images/search.svg';
+import user from '../public/images/user.svg';
+import cart from '../public/images/wine-cart.svg';
+import { CartItem } from '../interfaces';
 
 interface Props {
   cartItems?: CartItem[];
@@ -16,7 +16,7 @@ interface Props {
 
 const Header = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 0 20px;
   height: 60px;
@@ -32,8 +32,8 @@ const Header = styled.header`
   nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: space-evenly;
+    width: 40%;
     height: 100%;
     ul {
       display: flex;
@@ -46,9 +46,13 @@ const Header = styled.header`
         align-items: center;
         justify-content: center;
         height: 100%;
-        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 18px;
+        line-height: 24px;
         font-weight: bold;
-        color: #000;
+        color: #555555;
         vertical-align: middle;
       }
       li span {
@@ -58,11 +62,12 @@ const Header = styled.header`
         justify-content: center;
         align-items: center;
         border-bottom: 2px solid transparent;
-        transition-property: color, border-color;
-        transition-duration: 1.5s;
+        border-color: #fff;
         &:hover {
           color: #D14B8F;
-          border-bottom: 2px solid #D14B8F;
+          border-color: #D14B8F;
+          transition-property: color, border-color;
+          transition-duration: 1.5s;
         }
       }
       span.current-page {
@@ -75,7 +80,8 @@ const Header = styled.header`
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      width: 100%;
+      stroke: red;
+      fill: red;
       height: 100%;
       ul {
         display: flex;
@@ -106,12 +112,12 @@ const Header = styled.header`
       font-weight: bold;
       color: limegreen;
       position: absolute;
-      bottom: 3px;
-      right: 3px;
+      bottom: 0px;
+      right: 0px;
       background-color: #fff;
       border-radius: 50%;
-      width: 15px;
-      height: 15px;
+      width: 20px;
+      height: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
